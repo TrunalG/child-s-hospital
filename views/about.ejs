@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>About Our Hospital</title>
+  <link rel="stylesheet" href="/css/style.css">
+  <!-- Google Fonts for modern typography -->
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+  <header>
+    <div class="navbar">
+      <h1>About Our Hospital</h1>
+      <nav>
+        <a href="/">Home</a>
+        <a href="/about">About</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section id="hero-about">
+    <div class="hero-overlay">
+      <div class="hero-content">
+        <h2>Committed to Excellence in Healthcare</h2>
+        <p>We provide world-class medical care with compassion, innovation, and integrity.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Mission & Vision Section -->
+  <section id="mission-vision">
+    <div class="container">
+      <div class="mission">
+        <h2>Our Mission</h2>
+        <p>To provide exceptional, patient-centered healthcare that improves lives through innovation, dedication, and medical excellence.</p>
+      </div>
+      <div class="vision">
+        <h2>Our Vision</h2>
+        <p>To be the leading healthcare institution recognized for outstanding patient care, research, and education.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Our Values Section -->
+  <section id="values">
+    <h2>Our Core Values</h2>
+    <div class="values-cards">
+      <div class="value-card">
+        <img src="/images/compassion.png" alt="Compassion">
+        <h3>Compassion</h3>
+        <p>We treat every patient with empathy and respect, ensuring they feel valued and cared for.</p>
+      </div>
+      <div class="value-card">
+        <img src="/images/integrity.png" alt="Integrity">
+        <h3>Integrity</h3>
+        <p>We uphold the highest ethical standards and maintain honesty in everything we do.</p>
+      </div>
+      <div class="value-card">
+        <img src="/images/excellence.png" alt="Excellence">
+        <h3>Excellence</h3>
+        <p>We continuously strive to improve our medical practices and offer top-notch services.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Meet Our Team Section -->
+  <section id="team">
+    <h2>Meet Our Team</h2>
+    <div class="team-cards">
+      <% doctors.forEach(function(doctor) { %>
+        <div class="team-card">
+          <img src="/images/<%= doctor.image %>" alt="<%= doctor.name %>">
+          <h3><%= doctor.name %></h3>
+          <p><%= doctor.bio %></p>
+        </div>
+      <% }); %>
+      <% nurses.forEach(function(nurse) { %>
+        <div class="team-card">
+          <img src="/images/<%= nurse.image %>" alt="<%= nurse.name %>">
+          <h3><%= nurse.name %></h3>
+        </div>
+      <% }); %>
+    </div>
+  </section>
+
+  <!-- History Section -->
+  <section id="history">
+    <h2>Our Journey</h2>
+    <p>Founded in [Year], our hospital has grown from a small clinic to a multi-specialty medical center, serving thousands of patients every year.</p>
+    <img src="/images/hospital-history.jpg" alt="Our Hospital History">
+  </section>
+
+  <!-- Awards & Recognition -->
+  <section id="awards">
+    <h2>Awards & Recognitions</h2>
+    <div class="awards-cards">
+      <div class="award-card">
+        <img src="/images/award1.png" alt="Award">
+        <h3>Best Healthcare Provider</h3>
+        <p>Recognized as the best hospital in the region for exceptional patient care.</p>
+      </div>
+      <div class="award-card">
+        <img src="/images/award2.png" alt="Award">
+        <h3>Innovation in Medicine</h3>
+        <p>Awarded for our contributions to medical research and advanced treatment solutions.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2025 Our Hospital. All rights reserved.</p>
+  </footer>
+
+  <script src="/js/main.js"></script>
+</body>
+</html>

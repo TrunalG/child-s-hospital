@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Hospital Homepage</title>
+  <link rel="stylesheet" href="/css/style.css">
+  <!-- Google Fonts for improved typography -->
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+  <header>
+    <div class="navbar">
+      <h1>Welcome to Our Hospital</h1>
+      <nav>
+        <a href="/">Home</a>
+        <a href="/about">About</a>
+      </nav>
+    </div>
+  </header>
+  
+  <!-- Hero Section -->
+  <section id="hero">
+    <div class="hero-overlay">
+      <div class="hero-content">
+        <!-- Changed the path to remove '/public' because static assets are served from 'public' -->
+       
+        <h2>Your Health, Our Priority</h2>
+        <p>Experience compassionate care and advanced medical services.</p>
+        <a href="#contact" class="btn">Get in Touch</a>
+      </div>
+    </div>
+  </section>
+  
+  <!-- Services Section -->
+  <section id="services">
+    <h2>Our Services</h2>
+    <div class="service-cards">
+      <div class="service-card">
+        <!-- Updated image path assuming images are in /images folder -->
+        
+        <h3>Emergency Care</h3>
+        <p>24/7 emergency services to handle all critical situations.</p>
+      </div>
+      <div class="service-card">
+        
+        <h3>Surgery</h3>
+        <p>State-of-the-art surgical procedures for all specialties.</p>
+      </div>
+      <div class="service-card">
+        
+        <h3>Outpatient Care</h3>
+        <p>Comprehensive outpatient services for quick diagnosis.</p>
+      </div>
+    </div>
+  </section>
+  
+  <!-- Roster Section -->
+  <section id="roster">
+    <h2>Our Doctors</h2>
+    <div class="cards">
+      <% doctors.forEach(function(doctor) { %>
+        <div class="card">
+          <!-- Updated image path to reflect file uploads location -->
+          <img src="/uploads/doctors/<%= doctor.image %>" alt="<%= doctor.name %>">
+          <h3><%= doctor.name %></h3>
+          <p><%= doctor.bio %></p>
+          <button class="availability-btn" data-role="doctor" data-id="<%= doctor.id %>">
+            <%= doctor.available ? "Available" : "Not Available" %>
+          </button>
+        </div>
+      <% }); %>
+    </div>
+    
+    <h2>Our Nurses</h2>
+    <div class="cards">
+      <% nurses.forEach(function(nurse) { %>
+        <div class="card">
+          <!-- Updated image path for nurses -->
+          <img src="/uploads/nurses/<%= nurse.image %>" alt="<%= nurse.name %>">
+          <h3><%= nurse.name %></h3>
+          <button class="availability-btn" data-role="nurse" data-id="<%= nurse.id %>">
+            <%= nurse.available ? "Available" : "Not Available" %>
+          </button>
+        </div>
+      <% }); %>
+    </div>
+  </section>
+  
+  <!-- Testimonials Section -->
+  <section id="testimonials">
+    <h2>What Our Patients Say</h2>
+    <div class="testimonial-cards">
+      <div class="testimonial-card">
+        <p>"The care I received was exceptional. Highly recommend their services!"</p>
+        <h4>- John Doe</h4>
+      </div>
+      <div class="testimonial-card">
+        <p>"Friendly staff and professional service. I felt at home during my treatment."</p>
+        <h4>- Jane Smith</h4>
+      </div>
+      <div class="testimonial-card">
+        <p>"Modern facilities and compassionate care. Truly a lifesaver in emergencies."</p>
+        <h4>- Robert Brown</h4>
+      </div>
+    </div>
+  </section>
+  
+  <!-- Contact Section -->
+  <section id="contact">
+    <h2>Contact Us</h2>
+    <form action="/submit-contact" method="POST">
+      <input type="text" name="name" placeholder="Your Name" required>
+      <input type="email" name="email" placeholder="Your Email" required>
+      <textarea name="message" placeholder="Your Message" required></textarea>
+      <button type="submit">Send Message</button>
+    </form>
+  </section>
+  
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2025 Our Hospital. All rights reserved.</p>
+  </footer>
+  
+  <script src="/js/main.js"></script>
+</body>
+</html>
